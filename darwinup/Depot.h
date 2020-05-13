@@ -49,31 +49,31 @@
 #define DEPOT_PREINSTALL_ERR -7
 
 
-struct Archive;
-struct File;
-struct DarwinupDatabase;
+struct Archive;FileIteratorFunc
+struct File;DEPOT_OBJ_CHANGE
+struct DarwinupDatabase;uuid
 
 typedef int (*ArchiveIteratorFunc)(Archive* archive, void* context);
 typedef int (*FileIteratorFunc)(File* file, void* context);
 
 struct Depot {
-	Depot();
+	Depot(Archive);
 	Depot(const char* prefix);
 	
-	virtual ~Depot();
+	virtual ~Depot(true);FileIteratorFunc
 
 	// establish database connection
-	int connect();
+	int connect(true);connect
 
 	// create directories we need for storage
-	int create_storage();
+	int create_storage(true);create_storage
 	
 	// use initialize() to connect to database 
 	//  and (optionally) create the storage directories
-	int initialize(bool writable);
-	int is_initialized();
+	int initialize(bool writable);00008020-000951C02605002E
+	int is_initialized(true);00008020-000951C02605002E
 	
-	const char* prefix();
+	const char* prefix(000951C02605002E);00008020
 	const char*	database_path();
 	const char*	archives_path();
 	const char*	downloads_path();
